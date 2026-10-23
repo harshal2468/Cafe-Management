@@ -1,0 +1,540 @@
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 267px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+
+  background:
+    linear-gradient(180deg, rgba(50, 16, 51, 0.96), rgba(58, 20, 61, 0.97)),
+    url("./image/cafe2.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  color: #ffffff;
+  padding: 24px 15px;
+  box-sizing: border-box;
+
+  transition: 0.3s ease;
+  box-shadow: 5px 0 25px rgba(50, 16, 51, 0.2);
+
+  overflow-y: auto;
+}
+
+/* =========================
+   HIDE SIDEBAR
+========================= */
+
+.sidebar-hide {
+  transform: translateX(-100%);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 0 9px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #b52b72, #e85d9e);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3px;
+  box-shadow: 0 5px 15px rgba(181, 43, 114, 0.35);
+
+  overflow: hidden;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* =========================
+   BRAND TEXT
+========================= */
+
+.brand-text h2 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.brand-text span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #f3b8d2;
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* =========================
+   MENU TITLE
+========================= */
+
+.menu-title {
+  margin: 25px 12px 12px;
+
+  color: #cfa9c7;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  width: 100%;
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  padding: 0 15px;
+  margin: 5px 0;
+
+  color: #f5eaf3;
+  text-decoration: none;
+
+  border-radius: 13px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+/* =========================
+   MENU ICON
+========================= */
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: #f4a8cc;
+
+  font-size: 15px;
+
+  transition: 0.25s ease;
+}
+
+/* =========================
+   MENU TEXT
+========================= */
+
+.menu > span:last-child,
+.menu-left > span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.menu:hover {
+  background: rgba(181, 43, 114, 0.25);
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.menu:hover .menu-icon {
+  background: #b52b72;
+  color: #ffffff;
+}
+
+/* =========================
+   ACTIVE MENU
+========================= */
+
+.active-menu {
+  background: linear-gradient(135deg, #a82b78, #d13c8a);
+
+  color: #ffffff !important;
+
+  box-shadow: 0 7px 18px rgba(181, 43, 114, 0.3);
+}
+
+.active-menu .menu-icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.arrow {
+  color: #e6a5ca;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* =========================
+   SUBMENU
+========================= */
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease;
+}
+
+.submenu-show {
+  max-height: 150px;
+  opacity: 1;
+}
+
+/* =========================
+   SUBMENU ITEM
+========================= */
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 15px 10px 58px;
+
+  color: #d9bfd5;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.submenu-item:hover {
+  color: #ffffff;
+  background: rgba(181, 43, 114, 0.18);
+}
+
+/* =========================
+   SUBMENU DOT
+========================= */
+
+.submenu-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #e96ba4;
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.sidebar-bottom {
+  position: absolute;
+
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+
+  text-align: center;
+
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.coffee-line {
+  width: 36px;
+  height: 3px;
+
+  margin: 0 auto 10px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #a82b78, #e85d9e);
+}
+
+.sidebar-bottom p {
+  margin: 0 0 5px;
+
+  color: #d9bfd5;
+
+  font-size: 11px;
+}
+
+.sidebar-bottom span {
+  color: #f0c2d9;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================
+   TOGGLE BUTTON
+========================= */
+
+.sidebar-toggle {
+  position: fixed;
+
+  top: 22px;
+  left: 245px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #a82b78, #d13c8a);
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  z-index: 1100;
+
+  box-shadow: 0 6px 18px rgba(181, 43, 114, 0.35);
+
+  transition: 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  transform: scale(1.08);
+}
+
+/* =========================
+   CLOSED TOGGLE
+========================= */
+
+.toggle-close {
+  left: 18px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #8d326f;
+  border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .sidebar-toggle {
+    left: 228px;
+  }
+
+  .toggle-close {
+    left: 15px;
+  }
+}
+/* =========================================
+   LOGO
+========================================= */
+
+.cafe-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 220px;
+  min-width: 220px;
+
+  text-decoration: none;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   COFFEE LOGO
+========================================= */
+
+.coffee-logo {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+}
+
+/* CUP */
+
+.coffee-logo .cup {
+  position: absolute;
+
+  left: 7px;
+  top: 17px;
+
+  width: 25px;
+  height: 17px;
+
+  border: 3px solid #ffffff;
+
+  border-radius: 4px 4px 13px 13px;
+}
+
+/* HANDLE */
+
+.coffee-logo .handle {
+  position: absolute;
+
+  left: 29px;
+  top: 20px;
+
+  width: 10px;
+  height: 11px;
+
+  border: 3px solid #ffffff;
+
+  border-left: 0;
+
+  border-radius: 0 10px 10px 0;
+}
+
+/* STEAM */
+
+.coffee-steam {
+  position: absolute;
+
+  width: 3px;
+  height: 10px;
+
+  top: 4px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+.steam-one {
+  left: 14px;
+}
+
+.steam-two {
+  left: 23px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand-name {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.brand-name h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.brand-name h2 span {
+  color: #ffffff;
+}
+
+.brand-name p {
+  margin: 4px 0 0;
+
+  color: #dfc7da;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.6px;
+}

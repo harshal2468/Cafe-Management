@@ -1,0 +1,391 @@
+/* ===============================
+   VIEW ORDERS PAGE
+================================ */
+
+.orders-page {
+  min-height: 100vh;
+  padding: 35px 40px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #fff9f7 0%, #fbe8f1 50%, #f3e7f8 100%);
+}
+
+/* ===============================
+   PAGE HEADING
+================================ */
+
+.orders-heading {
+  margin-bottom: 28px;
+}
+
+.orders-heading > span {
+  display: inline-block;
+  margin-bottom: 9px;
+  padding: 6px 13px;
+  border-radius: 20px;
+  background: #f8e5f0;
+  color: #7a1f5c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.orders-heading h1 {
+  margin: 0;
+  color: #321033;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.orders-heading p {
+  margin: 7px 0 0;
+  color: #80617a;
+  font-size: 15px;
+}
+
+/* ===============================
+   ORDERS CARD
+================================ */
+
+.orders-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #efd4e3;
+  border-radius: 20px;
+  padding: 28px;
+  box-sizing: border-box;
+  box-shadow: 0 12px 35px rgba(122, 31, 92, 0.1);
+}
+
+/* ===============================
+   TABLE CONTAINER
+================================ */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #efdce7;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+/* ===============================
+   ORDERS TABLE
+================================ */
+
+.orders-table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+/* ===============================
+   TABLE HEADER
+================================ */
+
+.orders-table thead {
+  background: linear-gradient(135deg, #7a1f5c, #b52b72);
+}
+
+.orders-table th {
+  padding: 15px 14px;
+  color: #ffffff;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+/* ===============================
+   TABLE BODY
+================================ */
+
+.orders-table td {
+  padding: 14px;
+  border-bottom: 1px solid #f1e2eb;
+  color: #604a5b;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.orders-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  background: #fff7fa;
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===============================
+   ORDER ID
+================================ */
+
+.orders-table td:first-child {
+  color: #7a1f5c;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ===============================
+   USER ID
+================================ */
+
+.orders-table td:nth-child(2) {
+  color: #754568;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===============================
+   ITEMS
+================================ */
+
+.order-product {
+  min-width: 160px;
+  margin-bottom: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fff2f7;
+  border: 1px solid #f3dce8;
+}
+
+.order-product:last-child {
+  margin-bottom: 0;
+}
+
+.order-product span {
+  display: block;
+  color: #57153f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.order-product small {
+  display: block;
+  margin-top: 4px;
+  color: #977487;
+  font-size: 11px;
+}
+
+/* ===============================
+   PHONE
+================================ */
+
+.orders-table td:nth-child(4) {
+  white-space: nowrap;
+  color: #684e61;
+}
+
+/* ===============================
+   ADDRESS
+================================ */
+
+.address-cell {
+  min-width: 200px;
+  max-width: 260px;
+  color: #70596a !important;
+  line-height: 1.5;
+}
+
+/* ===============================
+   PAYMENT
+================================ */
+
+.orders-table td:nth-child(6) {
+  white-space: nowrap;
+}
+
+.orders-table td:nth-child(6)::first-letter {
+  color: #7a1f5c;
+}
+
+/* ===============================
+   TOTAL
+================================ */
+
+.total-cell {
+  min-width: 90px;
+  color: #7a1f5c !important;
+  font-size: 14px !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ===============================
+   STATUS
+================================ */
+
+.status {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* Common statuses */
+
+.status-pending {
+  background: #fff1d8;
+  color: #a56b15;
+}
+
+.status-confirmed {
+  background: #eee5f8;
+  color: #70428a;
+}
+
+.status-processing {
+  background: #f7e4f0;
+  color: #8d2864;
+}
+
+.status-shipped {
+  background: #e5f1fa;
+  color: #28658b;
+}
+
+.status-delivered {
+  background: #e7f6ec;
+  color: #287345;
+}
+
+.status-cancelled,
+.status-canceled {
+  background: #fde9ee;
+  color: #a33a57;
+}
+
+/* ===============================
+   DATE
+================================ */
+
+.orders-table td:last-child {
+  color: #806b79;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* ===============================
+   NO ORDERS
+================================ */
+
+.no-orders {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.no-orders h2 {
+  margin: 0 0 8px;
+  color: #4a1642;
+  font-size: 21px;
+}
+
+.no-orders p {
+  margin: 0;
+  color: #927b8d;
+  font-size: 13px;
+}
+
+/* ===============================
+   LOADING
+================================ */
+
+.orders-loading {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff9f7, #fbe8f1, #f3e7f8);
+  color: #7a1f5c;
+  font-size: 20px;
+}
+
+/* ===============================
+   TABLE SCROLLBAR
+================================ */
+
+.table-container::-webkit-scrollbar {
+  height: 7px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f8edf4;
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #c47aa8;
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #9f4c81;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+  .orders-page {
+    padding: 30px 25px;
+  }
+
+  .orders-card {
+    padding: 22px;
+  }
+
+  .orders-heading h1 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 650px) {
+  .orders-page {
+    padding: 25px 15px;
+  }
+
+  .orders-heading h1 {
+    font-size: 25px;
+  }
+
+  .orders-heading p {
+    font-size: 13px;
+  }
+
+  .orders-card {
+    padding: 17px;
+    border-radius: 15px;
+  }
+
+  .orders-table th {
+    padding: 13px 11px;
+  }
+
+  .orders-table td {
+    padding: 12px 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  .orders-page {
+    padding: 20px 10px;
+  }
+
+  .orders-heading h1 {
+    font-size: 23px;
+  }
+}

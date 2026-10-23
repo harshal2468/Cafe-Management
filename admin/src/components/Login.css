@@ -1,0 +1,293 @@
+/* =========================================
+   ADMIN LOGIN PAGE
+========================================= */
+
+.admin-login-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(rgba(255, 247, 250, 0.94), rgba(255, 247, 250, 0.94)),
+    url("./image/cafe2.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: Arial, sans-serif;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.admin-login-card {
+  width: 410px;
+
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid #ead5e2;
+
+  border-radius: 24px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 20px 60px rgba(58, 17, 53, 0.18);
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.admin-login-brand {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.admin-coffee-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: linear-gradient(135deg, #9d2367, #651747);
+
+  color: white;
+
+  font-size: 27px;
+
+  box-shadow: 0 8px 20px rgba(125, 29, 83, 0.25);
+}
+
+.admin-login-brand h1 {
+  margin: 0;
+
+  color: #35142f;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 27px;
+
+  letter-spacing: 3px;
+}
+
+.admin-login-brand p {
+  margin: 3px 0 0;
+
+  color: #9d2367;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.admin-login-heading {
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+.admin-login-heading h2 {
+  margin: 0 0 7px;
+
+  color: #35142f;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 27px;
+}
+
+.admin-login-heading p {
+  margin: 0;
+
+  color: #8b7485;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.admin-input-group {
+  margin-bottom: 20px;
+}
+
+.admin-input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #482d43;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.admin-input-group input {
+  width: 100%;
+  height: 49px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dbc5d5;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fffafd;
+
+  color: #35142f;
+
+  font-size: 14px;
+
+  transition: all 0.25s ease;
+}
+
+.admin-input-group input::placeholder {
+  color: #ad9aa9;
+}
+
+.admin-input-group input:hover {
+  border-color: #b46a96;
+}
+
+.admin-input-group input:focus {
+  border-color: #9d2367;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(157, 35, 103, 0.1);
+}
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.admin-login-button {
+  width: 100%;
+  height: 49px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: linear-gradient(135deg, #a3266d, #761c50);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 9px 20px rgba(125, 29, 83, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.admin-login-button:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(135deg, #b32c77, #681943);
+
+  box-shadow: 0 13px 25px rgba(125, 29, 83, 0.3);
+}
+
+.admin-login-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.admin-login-footer {
+  text-align: center;
+
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #eee0e8;
+}
+
+.admin-login-footer span {
+  display: block;
+
+  color: #9d2367;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.admin-login-footer small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #9b8997;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 500px) {
+  .admin-login-page {
+    padding: 20px;
+  }
+
+  .admin-login-card {
+    width: 100%;
+
+    padding: 30px 25px;
+
+    border-radius: 20px;
+  }
+
+  .admin-login-brand h1 {
+    font-size: 24px;
+  }
+
+  .admin-login-heading h2 {
+    font-size: 24px;
+  }
+}

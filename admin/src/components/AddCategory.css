@@ -1,0 +1,456 @@
+/* =========================
+   ADD CATEGORY PAGE
+========================= */
+
+.cafe-category-page {
+  min-height: 100vh;
+  padding: 30px 42px;
+  box-sizing: border-box;
+
+  background: linear-gradient(135deg, #fff9f7 0%, #fbe8f1 48%, #f3e7f8 100%);
+
+  color: #321033;
+}
+
+/* =========================
+   PAGE HEADING
+========================= */
+
+.cafe-category-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.cafe-title-section {
+  position: relative;
+}
+
+.cafe-small-line {
+  width: 42px;
+  height: 4px;
+
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #7a1f5c, #b52b72);
+}
+
+.cafe-badge {
+  display: inline-block;
+
+  margin: 0 0 9px;
+  padding: 7px 16px;
+
+  border-radius: 20px;
+
+  background: #eadcf5;
+  color: #7a1f5c;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.cafe-title-section h1 {
+  margin: 0;
+
+  color: #321033;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.cafe-subtitle {
+  margin: 6px 0 0;
+
+  color: #9a718c;
+
+  font-size: 14px;
+}
+
+/* =========================
+   HEADER ICON
+========================= */
+
+.cafe-header-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #f6dce9, #e8d8f5);
+
+  color: #8c2867;
+
+  font-size: 25px;
+
+  box-shadow: 0 7px 18px rgba(122, 31, 92, 0.1);
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.cafe-category-card {
+  width: 100%;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #f0d8e5;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(122, 31, 92, 0.09);
+}
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.cafe-category-card-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.cafe-plus-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #8b2464, #b52b72);
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 400;
+
+  box-shadow: 0 6px 15px rgba(181, 43, 114, 0.22);
+}
+
+.cafe-category-card-header h2 {
+  margin: 0;
+
+  color: #4a193f;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cafe-category-card-header p {
+  margin: 4px 0 0;
+
+  color: #a17d98;
+
+  font-size: 12px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.cafe-category-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 22px 0;
+
+  background: #f0dce7;
+}
+
+/* =========================
+   FORM ROW
+========================= */
+
+.cafe-category-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.cafe-input-group,
+.cafe-photo-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cafe-input-group label,
+.cafe-photo-group label {
+  margin-bottom: 8px;
+
+  color: #542143;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.cafe-input-wrapper {
+  width: 100%;
+}
+
+.cafe-input-wrapper input {
+  width: 100%;
+  height: 47px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5ccda;
+  border-radius: 10px;
+
+  background: #fffafd;
+
+  color: #542143;
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+.cafe-input-wrapper input::placeholder {
+  color: #b597aa;
+}
+
+.cafe-input-wrapper input:focus {
+  border-color: #a52a70;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(181, 43, 114, 0.1);
+}
+
+/* =========================
+   PHOTO SECTION
+========================= */
+
+.cafe-photo-group {
+  margin-top: 22px;
+}
+
+.cafe-file-drop {
+  width: 100%;
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 2px dashed #ddb8ce;
+  border-radius: 12px;
+
+  background: #fff8fb;
+
+  transition: 0.25s ease;
+}
+
+.cafe-file-drop:hover {
+  border-color: #b52b72;
+  background: #fdf0f6;
+}
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.cafe-file-drop input {
+  width: 90%;
+
+  color: #7a1f5c;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.cafe-file-drop input::file-selector-button {
+  margin-right: 12px;
+
+  padding: 9px 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #8b2464, #b52b72);
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.cafe-file-drop input::file-selector-button:hover {
+  background: #7a1f5c;
+}
+
+.cafe-photo-group > p {
+  margin: 7px 0 0;
+
+  color: #a78399;
+
+  font-size: 11px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.cafe-category-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.cafe-reset-button {
+  min-width: 105px;
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: 1px solid #d8bfd0;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #7a1f5c;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.cafe-reset-button:hover {
+  background: #fbe8f1;
+  border-color: #c98bad;
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.cafe-save-button {
+  min-width: 145px;
+  height: 42px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(135deg, #8b2464, #b52b72);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 16px rgba(181, 43, 114, 0.22);
+
+  transition: all 0.25s ease;
+}
+
+.cafe-save-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(181, 43, 114, 0.3);
+}
+
+.cafe-save-button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .cafe-category-page {
+    padding: 25px;
+  }
+
+  .cafe-category-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cafe-category-page {
+    padding: 18px;
+  }
+
+  .cafe-category-heading {
+    align-items: flex-start;
+  }
+
+  .cafe-title-section h1 {
+    font-size: 26px;
+  }
+
+  .cafe-header-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 21px;
+  }
+
+  .cafe-category-card {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .cafe-category-buttons {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cafe-reset-button,
+  .cafe-save-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,96 @@
+/* =========================
+   ADMIN LAYOUT
+========================= */
+
+.admin-layout {
+  min-height: 100vh;
+  width: 100%;
+  background: #fff8fb;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  min-height: 100vh;
+  margin-left: 267px;
+
+  background: linear-gradient(135deg, #fff8fb 0%, #f7effb 100%);
+
+  box-sizing: border-box;
+
+  transition: margin-left 0.3s ease;
+}
+
+/* =========================
+   SIDEBAR OPEN
+========================= */
+
+.admin-layout.sidebar-is-open .main-content {
+  margin-left: 267px;
+}
+
+/* =========================
+   SIDEBAR CLOSED
+========================= */
+
+.admin-layout.sidebar-is-closed .main-content {
+  margin-left: 0;
+}
+
+/* =========================
+   PAGE TRANSITION
+========================= */
+
+.main-content > * {
+  animation: pageFade 0.35s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.main-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #f7eaf2;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #b52b72;
+  border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: #7a1f5c;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .admin-layout.sidebar-is-open .main-content,
+  .admin-layout.sidebar-is-closed .main-content {
+    margin-left: 0;
+  }
+}
