@@ -1,0 +1,536 @@
+/* =========================================
+   BREWHUB FOOTER
+========================================= */
+
+.footer {
+  width: 100%;
+
+  margin-top: 50px;
+
+  background: linear-gradient(135deg, #29152a 0%, #351a31 50%, #241523 100%);
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding: 65px 0 50px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.6fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap: 55px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   COMMON SECTION
+========================================= */
+
+.footer-section {
+  min-width: 0;
+}
+
+.footer-section h3 {
+  position: relative;
+
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+.footer-section h3::after {
+  content: "";
+
+  display: block;
+
+  width: 35px;
+
+  height: 2px;
+
+  margin-top: 9px;
+
+  background: #d99b5d;
+
+  border-radius: 10px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand {
+  padding-right: 20px;
+}
+
+/* =========================================
+   FOOTER LOGO
+========================================= */
+
+.footer-logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: white;
+
+  text-decoration: none;
+}
+
+/* =========================================
+   CUP LOGO
+========================================= */
+
+.footer-cup {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #6d3150, #8b4165);
+
+  font-size: 25px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   LOGO TEXT
+========================================= */
+
+.footer-logo h2 {
+  margin: 0;
+
+  color: #fffaf5;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+}
+
+.footer-logo h2 span {
+  color: #d99b5d;
+}
+
+.footer-logo small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #c9b7c4;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   BRAND DESCRIPTION
+========================================= */
+
+.footer-brand > p {
+  max-width: 320px;
+
+  margin: 0 0 25px;
+
+  color: #cdbec9;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.social-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 75px;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 20px;
+
+  color: #dfd2dc;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #8b4165;
+
+  border-color: #8b4165;
+
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   FOOTER LINKS
+========================================= */
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.footer-links a {
+  position: relative;
+
+  width: fit-content;
+
+  color: #cdbec9;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: all 0.3s ease;
+}
+
+.footer-links a::before {
+  content: "→";
+
+  margin-right: 8px;
+
+  color: #d99b5d;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  display: inline-block;
+
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+
+  transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+  padding-left: 5px;
+}
+
+.contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   CONTACT ICON
+========================================= */
+
+.contact-item > span {
+  width: 36px;
+
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(217, 155, 93, 0.12);
+
+  color: #d99b5d;
+
+  font-size: 15px;
+}
+
+/* =========================================
+   CONTACT TEXT
+========================================= */
+
+.contact-item small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #a997a5;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.contact-item p {
+  margin: 0;
+
+  color: #e5dce2;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.footer-bottom {
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding: 20px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #a998a6;
+
+  font-size: 11px;
+}
+
+.footer-bottom strong {
+  color: #d99b5d;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   HEART
+========================================= */
+
+.heart {
+  color: #e98a9d;
+
+  font-size: 14px;
+
+  display: inline-block;
+
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* =========================================
+   HOVER LOGO
+========================================= */
+
+.footer-logo:hover .footer-cup {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.footer-cup {
+  transition: 0.3s ease;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+  .footer-container {
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    gap: 40px;
+  }
+
+  .contact-section {
+    grid-column: span 1;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .footer-container {
+    width: 88%;
+
+    padding: 50px 0 35px;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px 25px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+
+    padding-right: 0;
+  }
+
+  .footer-brand > p {
+    max-width: 450px;
+  }
+
+  .contact-section {
+    grid-column: span 2;
+  }
+
+  .footer-bottom {
+    width: 88%;
+
+    padding: 18px 0;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+  .footer-container {
+    width: 86%;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .footer-brand,
+  .contact-section {
+    grid-column: span 1;
+  }
+
+  .footer-logo h2 {
+    font-size: 23px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+  }
+
+  .social-links {
+    gap: 7px;
+  }
+
+  .social-links a {
+    min-width: 65px;
+
+    padding: 7px 10px;
+
+    font-size: 10px;
+  }
+}

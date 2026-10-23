@@ -1,0 +1,870 @@
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #fff7f2;
+
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.login-left {
+  width: 50%;
+  min-height: 100vh;
+
+  position: relative;
+
+  background-image:
+    linear-gradient(90deg, rgba(45, 15, 43, 0.78), rgba(76, 29, 67, 0.62)),
+    url("../images/side-login.png");
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   DECORATIVE CIRCLES
+========================================= */
+
+.login-left::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -190px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 0 0 50px rgba(255, 255, 255, 0.025),
+    0 0 0 100px rgba(255, 255, 255, 0.02);
+}
+
+.login-left::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -280px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.login-overlay {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 55vh;
+
+  padding: 80px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  color: white;
+}
+
+/* =========================================
+   BREWHUB
+========================================= */
+
+.cafe-logo {
+  margin-bottom: 24px;
+
+  color: #e98a78;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   WELCOME HEADING
+========================================= */
+
+.login-overlay h1 {
+  margin: 0 0 22px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(52px, 5vw, 72px);
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  color: #ffffff;
+
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+
+  animation: loginTitle 1s ease;
+}
+
+/* =========================================
+   LEFT DESCRIPTION
+========================================= */
+
+.login-overlay p {
+  max-width: 480px;
+
+  margin: 0;
+
+  color: #f7e9e9;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  font-weight: 400;
+
+  animation: loginText 1.2s ease;
+}
+
+/* =========================================
+   DECORATIVE LINE
+========================================= */
+
+.login-line {
+  width: 75px;
+  height: 3px;
+
+  margin: 30px 0 18px;
+
+  background: #e98a78;
+
+  border-radius: 10px;
+
+  box-shadow: 0 3px 12px rgba(233, 138, 120, 0.4);
+}
+
+/* =========================================
+   LEFT BOTTOM TEXT
+========================================= */
+
+.login-overlay span {
+  color: #f2d9d9;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.login-right {
+  width: 50%;
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(233, 138, 120, 0.12),
+      transparent 35%
+    ),
+    #fff8f5;
+}
+
+/* =========================================
+   LOGIN BOX
+========================================= */
+
+.login-box {
+  width: 100%;
+  max-width: 450px;
+
+  min-height: 570px;
+
+  padding: 105px 43px 40px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #ead4d1;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 70px rgba(64, 18, 53, 0.12),
+    0 5px 20px rgba(64, 18, 53, 0.05);
+
+  animation: loginBox 0.7s ease;
+}
+
+/* =========================================
+   FORM SHINE
+========================================= */
+
+.login-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 500px;
+
+  top: -100px;
+  left: -250px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+
+  transform: rotate(20deg);
+
+  animation: formShine 6s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+@keyframes formShine {
+  0% {
+    left: -250px;
+  }
+
+  45%,
+  100% {
+    left: 120%;
+  }
+}
+
+/* =========================================
+   CENTER LOGO
+========================================= */
+
+.login-logo {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  top: -50px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #ffffff;
+
+  border: 1px solid #e3c1d1;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  box-shadow: 0 12px 30px rgba(64, 18, 53, 0.15);
+}
+
+.login-logo img {
+  width: 78px;
+  height: 78px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* =========================================
+   LOGIN HEADING
+========================================= */
+
+.login-heading {
+  margin-bottom: 32px;
+}
+
+.login-heading span {
+  color: #a43b73;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 3.5px;
+}
+
+.login-heading h2 {
+  margin: 10px 0 8px;
+
+  color: #35122f;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 40px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.login-heading p {
+  margin: 0;
+
+  color: #8c747f;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3e2638;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px 16px;
+
+  border: 1px solid #dfcfd5;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fffafa;
+
+  color: #35122f;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #b49ea9;
+}
+
+.input-group input:focus {
+  border-color: #a43b73;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(164, 59, 115, 0.1),
+    0 5px 15px rgba(164, 59, 115, 0.06);
+}
+
+/* =========================================
+   LOGIN OPTIONS
+========================================= */
+
+.login-options {
+  margin: 6px 0 26px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+}
+
+.remember {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #806b77;
+
+  cursor: pointer;
+}
+
+.remember input {
+  width: 15px;
+  height: 15px;
+
+  accent-color: #7d205e;
+
+  cursor: pointer;
+}
+
+.login-options a {
+  color: #a43b73;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.login-options a:hover {
+  color: #5d1747;
+}
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-submit {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  color: white;
+
+  background: linear-gradient(135deg, #4b1744, #7d205e, #a43b73);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(125, 32, 94, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.login-submit:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 15px 30px rgba(125, 32, 94, 0.35);
+
+  background: linear-gradient(135deg, #7d205e, #a43b73, #c25d80);
+}
+
+.login-submit:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   REGISTER TEXT
+========================================= */
+
+.register-text {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #8c747f;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+}
+
+.register-text a {
+  margin-left: 5px;
+
+  color: #a43b73;
+
+  text-decoration: none;
+
+  font-weight: 700;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   BACK HOME
+========================================= */
+
+.back-home {
+  display: block;
+
+  margin-top: 22px;
+
+  text-align: center;
+
+  color: #806b77;
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  color: #a43b73;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes loginBox {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes loginTitle {
+  from {
+    opacity: 0;
+
+    transform: translateX(-35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+@keyframes loginText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .login-overlay {
+    padding: 50px;
+  }
+
+  .login-overlay h1 {
+    font-size: 52px;
+  }
+
+  .login-right {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .login-page {
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .login-left {
+    width: 100%;
+
+    min-height: 430px;
+  }
+
+  .login-overlay {
+    height: 430px;
+
+    padding: 50px;
+  }
+
+  .login-overlay h1 {
+    font-size: 48px;
+  }
+
+  .login-right {
+    width: 100%;
+
+    min-height: 650px;
+
+    padding: 50px 20px;
+  }
+
+  .login-box {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-left {
+    min-height: 360px;
+  }
+
+  .login-overlay {
+    height: 360px;
+
+    padding: 35px 25px;
+  }
+
+  .cafe-logo {
+    font-size: 17px;
+
+    letter-spacing: 4px;
+  }
+
+  .login-overlay h1 {
+    font-size: 40px;
+  }
+
+  .login-overlay p {
+    font-size: 13px;
+  }
+
+  .login-overlay span {
+    font-size: 9px;
+  }
+
+  .login-right {
+    padding: 45px 15px;
+  }
+
+  .login-box {
+    min-height: auto;
+
+    padding: 95px 25px 35px;
+
+    border-radius: 20px;
+  }
+
+  .login-heading h2 {
+    font-size: 34px;
+  }
+
+  .login-options {
+    font-size: 12px;
+  }
+}
+/* =========================================
+   LOGIN SUCCESS POPUP
+========================================= */
+
+.login-success-popup {
+  position: fixed;
+
+  top: 30px;
+  right: 30px;
+
+  z-index: 99999;
+
+  min-width: 320px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 16px 20px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  border-left: 5px solid #a91459;
+
+  box-shadow: 0 15px 40px rgba(61, 15, 80, 0.25);
+
+  animation: loginSuccessPopup 0.5s ease forwards;
+}
+
+/* SUCCESS ICON */
+
+.login-success-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #a91459, #c52d72);
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  animation: loginSuccessIcon 0.6s ease 0.2s both;
+}
+
+/* CONTENT */
+
+.login-success-content h3 {
+  margin: 0 0 4px;
+
+  color: #3d0f50;
+
+  font-size: 17px;
+}
+
+.login-success-content p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+/* =========================================
+   POPUP ANIMATION
+========================================= */
+
+@keyframes loginSuccessPopup {
+  0% {
+    opacity: 0;
+
+    transform: translateX(120px) scale(0.8);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform: translateX(-10px) scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* =========================================
+   CHECK ICON ANIMATION
+========================================= */
+
+@keyframes loginSuccessIcon {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .login-success-popup {
+    top: 20px;
+    right: 15px;
+    left: 15px;
+
+    min-width: auto;
+  }
+}

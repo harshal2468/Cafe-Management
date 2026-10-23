@@ -1,0 +1,1033 @@
+/* =========================================
+   GLOBAL FIX
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+
+  height: 72px;
+
+  margin: 0;
+  padding: 0;
+
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(90deg, #2d0f35 0%, #42103f 50%, #260d2e 100%);
+
+  border-radius: 0 0 16px 16px;
+
+  box-shadow: 0 5px 20px rgba(45, 15, 53, 0.25);
+
+  font-family: "Poppins", sans-serif;
+
+  overflow: visible;
+}
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+
+.nav-container {
+  width: 94%;
+  max-width: 1450px;
+
+  height: 72px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.cafe-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 220px;
+  min-width: 220px;
+
+  text-decoration: none;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   COFFEE LOGO
+========================================= */
+
+.coffee-logo {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+}
+
+/* CUP */
+
+.coffee-logo .cup {
+  position: absolute;
+
+  left: 7px;
+  top: 17px;
+
+  width: 25px;
+  height: 17px;
+
+  border: 3px solid #ffffff;
+
+  border-radius: 4px 4px 13px 13px;
+}
+
+/* HANDLE */
+
+.coffee-logo .handle {
+  position: absolute;
+
+  left: 29px;
+  top: 20px;
+
+  width: 10px;
+  height: 11px;
+
+  border: 3px solid #ffffff;
+
+  border-left: 0;
+
+  border-radius: 0 10px 10px 0;
+}
+
+/* STEAM */
+
+.coffee-steam {
+  position: absolute;
+
+  width: 3px;
+  height: 10px;
+
+  top: 4px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+.steam-one {
+  left: 14px;
+}
+
+.steam-two {
+  left: 23px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand-name {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.brand-name h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.brand-name h2 span {
+  color: #ffffff;
+}
+
+.brand-name p {
+  margin: 4px 0 0;
+
+  color: #dfc7da;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.6px;
+}
+
+/* =========================================
+   NAV MENU
+========================================= */
+
+.nav-menu {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+}
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-link {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 25px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition: 0.25s ease;
+}
+
+/* HOVER */
+
+.nav-link:hover {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ACTIVE */
+
+.nav-link.active {
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #641951, #7d1d64);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* REMOVE UNDERLINE */
+
+.nav-link.active::after {
+  display: none;
+}
+
+/* =========================================
+   AUTH BUTTONS
+========================================= */
+
+.auth-buttons {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  width: 175px;
+  min-width: 175px;
+}
+
+/* LOGIN */
+
+.login-btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+
+  padding: 0 18px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  color: #351331;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #f1e5ef;
+
+  color: #351331;
+
+  transform: translateY(-2px);
+}
+
+/* REGISTER */
+
+.register-btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+
+  padding: 0 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 22px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: 0.25s ease;
+}
+
+.register-btn:hover {
+  background: #ffffff;
+
+  color: #351331;
+}
+
+/* =========================================
+   LARGE SCREEN
+========================================= */
+
+@media (min-width: 1200px) {
+  .nav-container {
+    width: 92%;
+  }
+
+  .nav-link {
+    padding: 0 20px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .nav-container {
+    width: 96%;
+
+    gap: 12px;
+  }
+
+  .cafe-logo {
+    width: 190px;
+    min-width: 190px;
+  }
+
+  .nav-link {
+    padding: 0 11px;
+
+    font-size: 13px;
+  }
+
+  .auth-buttons {
+    width: 155px;
+    min-width: 155px;
+  }
+
+  .login-btn,
+  .register-btn {
+    padding: 0 12px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+  .navbar {
+    height: auto;
+
+    border-radius: 0;
+  }
+
+  .nav-container {
+    width: 92%;
+
+    height: auto;
+
+    min-height: 72px;
+
+    padding: 10px 0;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .cafe-logo {
+    width: auto;
+    min-width: auto;
+  }
+
+  .nav-menu {
+    order: 3;
+
+    flex: none;
+
+    width: 100%;
+
+    height: 45px;
+
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    flex-shrink: 0;
+
+    height: 38px;
+
+    padding: 0 14px;
+
+    font-size: 12px;
+  }
+
+  .auth-buttons {
+    width: auto;
+
+    min-width: auto;
+
+    margin-left: auto;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .brand-name h2 {
+    font-size: 18px;
+  }
+
+  .brand-name p {
+    font-size: 5.5px;
+  }
+
+  .coffee-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .login-btn,
+  .register-btn {
+    height: 32px;
+
+    padding: 0 11px;
+
+    font-size: 10px;
+  }
+}
+/* =========================
+   VIEW CART
+========================= */
+
+.nav-cart {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0px;
+
+  width: 128px;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  color: #f7e8d2;
+
+  background: transparent;
+
+  border: 1.5px solid #6b174f;
+  border-radius: 18px;
+
+  font-size: 14px;
+  font-weight: 20;
+
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+}
+
+/* CART ICON */
+
+.cart-icon {
+  font-size: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1;
+}
+
+/* CART TEXT */
+
+.cart-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* HOVER */
+
+.nav-cart:hover {
+  background: #a5266d;
+  border-color: #a5266d;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(165, 38, 109, 0.3);
+}
+
+/* =========================
+   CART COUNT
+========================= */
+
+.cart-count {
+  position: absolute;
+
+  top: -8px;
+  right: -6px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7255f;
+  color: white;
+
+  border-radius: 50%;
+
+  border: 2px solid #35103d;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  z-index: 5;
+}
+/* =================================
+   PROFILE WRAPPER
+================================= */
+
+/* =================================
+   PROFILE WRAPPER
+================================= */
+
+.profile-wrapper {
+  position: relative;
+}
+
+/* =================================
+   PROFILE BUTTON
+================================= */
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 15px;
+
+  border: none;
+  border-radius: 25px;
+
+  background: #6b174f;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+  background: #8e2468;
+  transform: translateY(-2px);
+}
+
+/* =================================
+   PROFILE ICON
+================================= */
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #6b174f;
+
+  border-radius: 50%;
+
+  font-size: 16px;
+}
+
+/* =================================
+   PROFILE NAME
+================================= */
+
+.profile-name {
+  max-width: 100px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #ffffff;
+}
+
+/* =================================
+   PROFILE ARROW
+================================= */
+
+.profile-arrow {
+  font-size: 9px;
+  color: #f5c6df;
+}
+
+/* =================================
+   PROFILE DROPDOWN
+================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  top: 58px;
+  right: 0;
+
+  width: 290px;
+
+  background: #fffafa;
+
+  border: 1px solid #ead0df;
+  border-radius: 15px;
+
+  padding: 18px;
+
+  box-shadow: 0 12px 35px rgba(70, 15, 55, 0.22);
+
+  z-index: 9999;
+
+  animation: profileDrop 0.2s ease;
+}
+
+/* =================================
+   DROPDOWN ANIMATION
+================================= */
+
+@keyframes profileDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================
+   PROFILE HEADER
+================================= */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-big-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7dbea;
+  color: #6b174f;
+
+  border-radius: 50%;
+
+  font-size: 24px;
+}
+
+.profile-header h3 {
+  margin: 0;
+
+  color: #35152f;
+
+  font-size: 18px;
+}
+
+.profile-header p {
+  margin: 4px 0 0;
+
+  color: #8e2468;
+
+  font-size: 13px;
+
+  text-transform: capitalize;
+}
+
+/* =================================
+   DIVIDER
+================================= */
+
+.profile-divider {
+  height: 1px;
+
+  background: #ead0df;
+
+  margin: 15px 0;
+}
+
+/* =================================
+   PROFILE DETAILS
+================================= */
+
+.profile-detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 9px 0;
+
+  border-bottom: 1px solid #f1e1ea;
+}
+
+.profile-detail span {
+  color: #8c7184;
+
+  font-size: 13px;
+}
+
+.profile-detail strong {
+  color: #35152f;
+
+  font-size: 13px;
+
+  max-width: 170px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =================================
+   LOGOUT BUTTON
+================================= */
+
+.logout-btn {
+  width: 100%;
+
+  margin-top: 16px;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #8e2468;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #6b174f;
+  transform: translateY(-1px);
+}
+/* =========================================
+   LOGOUT SUCCESS CENTER POPUP
+========================================= */
+
+.logout-success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+
+  width: 360px;
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px 25px;
+
+  background: #fff;
+
+  border-radius: 18px;
+
+  border: 2px solid #a91459;
+
+  box-shadow: 0 20px 60px rgba(61, 15, 80, 0.35);
+
+  z-index: 999999;
+
+  animation: logoutPopupIn 0.6s ease forwards;
+}
+
+/* =========================================
+   SUCCESS ICON
+========================================= */
+
+.logout-success-icon {
+  width: 55px;
+  height: 55px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #a91459, #c52d72);
+
+  color: #fff;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  animation: logoutIconPop 0.7s ease 0.15s both;
+}
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.logout-success-content h3 {
+  margin: 0 0 5px;
+
+  color: #3d0f50;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logout-success-content p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 15px;
+}
+
+/* =========================================
+   POPUP ANIMATION
+========================================= */
+
+@keyframes logoutPopupIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* =========================================
+   ICON POP ANIMATION
+========================================= */
+
+@keyframes logoutIconPop {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.25) rotate(10deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .logout-success-popup {
+    width: calc(100% - 40px);
+    min-height: 100px;
+
+    padding: 18px;
+  }
+
+  .logout-success-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 25px;
+  }
+
+  .logout-success-content h3 {
+    font-size: 18px;
+  }
+
+  .logout-success-content p {
+    font-size: 14px;
+  }
+}
+.my-orders-btn {
+  display: block;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-top: 15px;
+
+  padding: 11px 15px;
+
+  border-radius: 10px;
+
+  background: #f8eaf0;
+
+  color: #a91459;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.my-orders-btn:hover {
+  background: #a91459;
+
+  color: #fff;
+}
