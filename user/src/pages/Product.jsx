@@ -9,12 +9,10 @@ function Product() {
 
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
   const [productsLoading, setProductsLoading] = useState(true);
   const [categoriesLoading, setCategoriesLoading] = useState(true);
   const [productsError, setProductsError] = useState("");
-  const [rating, setRating] = useState(0);
+  const [message, setMessage] = useState("");
 
   // FETCH PRODUCTS
   const fetchProducts = async () => {
@@ -124,15 +122,23 @@ function Product() {
     setTimeout(() => flyingItem.remove(), 750);
   };
 
+  // CART SUCCESS MESSAGE
+  const showCartMessage = (text) => {
+    setMessage(text);
+
+    setTimeout(() => {
+      setMessage("");
+    }, 2000);
+  };
+
   // ADD TO CART
   const addToCart = async (product, event) => {
-    const clickedButton = event?.currentTarget;
+    const clickedButton = event.currentTarget;
 
     try {
       const user = await checkLogin();
 
       if (!user) {
-        setSelectedProduct(null);
         navigate("/login");
         return;
       }
@@ -178,55 +184,11 @@ function Product() {
       window.dispatchEvent(new Event("cartUpdated"));
 
       showCartMessage(`${product.pname} added to cart`);
-
-      // Close modal after successful add
-      setSelectedProduct(null);
     } catch (error) {
       console.log("Add To Cart Error:", error);
+      showCartMessage("Unable to add product to cart.");
     }
   };
-
-  // CART SUCCESS MESSAGE
-  const showCartMessage = (message) => {
-    const oldMessage = document.querySelector(".cart-success-message");
-
-    if (oldMessage) oldMessage.remove();
-
-    const messageBox = document.createElement("div");
-    messageBox.className = "cart-success-message";
-    messageBox.innerText = message;
-
-    document.body.appendChild(messageBox);
-
-    setTimeout(() => {
-      messageBox.classList.add("show");
-    }, 10);
-
-    setTimeout(() => {
-      messageBox.classList.remove("show");
-
-      setTimeout(() => {
-        messageBox.remove();
-      }, 300);
-    }, 1800);
-  };
-
-  // CLOSE MODAL WITH ESCAPE KEY
-  useEffect(() => {
-    if (!selectedProduct) return;
-
-    const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        setSelectedProduct(null);
-      }
-    };
-
-    document.addEventListener("keydown", handleEscape);
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [selectedProduct]);
 
   // INITIAL DATA
   useEffect(() => {
@@ -238,6 +200,15 @@ function Product() {
     <>
       <Navbar />
 
+      {/* CART SUCCESS MESSAGE */}
+      {message && (
+        <div className="cart-toast">
+          <span>✓</span>
+          {message}
+        </div>
+      )}
+
+      {/* PRODUCTS SECTION */}
       <section className="products-section">
         <div className="section-heading">
           <span>OUR SPECIALS</span>
@@ -255,7 +226,8 @@ function Product() {
           <div className="products-empty">
             <h3>Something went wrong</h3>
             <p>{productsError}</p>
-            <button className="retry-btn" onClick={fetchProducts}>
+
+            <button type="button" className="retry-btn" onClick={fetchProducts}>
               Try Again
             </button>
           </div>
@@ -271,6 +243,7 @@ function Product() {
           <div className="product-grid">
             {products.map((product) => (
               <div className="product-card" key={product._id}>
+                {/* PRODUCT IMAGE */}
                 <div className="product-image">
                   <img
                     src={`http://localhost:5000/uploads/${product.photo}`}
@@ -278,6 +251,7 @@ function Product() {
                   />
                 </div>
 
+                {/* PRODUCT INFORMATION */}
                 <div className="product-info">
                   <small>
                     {categoriesLoading
@@ -286,19 +260,21 @@ function Product() {
                   </small>
 
                   <h3>{product.pname}</h3>
+
                   <p>{product.description}</p>
 
+                  {/* PRICE AND ADD TO CART */}
                   <div className="product-bottom">
                     <strong>₹{Number(product.rate) || 0}</strong>
-                  </div>
 
-                  <button
-                    type="button"
-                    className="view-details-btn"
-                    onClick={() => setSelectedProduct(product)}
-                  >
-                    View Details
-                  </button>
+                    <button
+                      type="button"
+                      className="add-cart-btn"
+                      onClick={(event) => addToCart(product, event)}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -307,89 +283,6 @@ function Product() {
       </section>
 
       <Footer />
-
-      {/* VIEW DETAILS MODAL */}
-      {selectedProduct && (
-        <div
-          className="product-modal-overlay"
-          onClick={() => setSelectedProduct(null)}
-        >
-          <div
-            className="product-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="product-modal-title"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="modal-close-btn"
-              onClick={() => setSelectedProduct(null)}
-              aria-label="Close product details"
-            >
-              &times;
-            </button>
-
-            <div className="modal-product-image-wrap">
-              <img
-                src={`http://localhost:5000/uploads/${selectedProduct.photo}`}
-                alt={selectedProduct.pname}
-                className="modal-product-image"
-              />
-            </div>
-
-            <div className="modal-product-info">
-              <span className="modal-product-category">
-                {getCategoryName(selectedProduct.categoryid)}
-              </span>
-
-              <h2 id="product-modal-title">{selectedProduct.pname}</h2>
-
-              <p className="modal-product-price">
-                ₹{Number(selectedProduct.rate) || 0}
-              </p>
-
-              <p className="modal-product-description">
-                {selectedProduct.description || "No description available."}
-              </p>
-
-              <div className="product-rating">
-                <h4>Rate This Product</h4>
-
-                <div className="rating-stars">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <button
-                      type="button"
-                      key={star}
-                      className="rating-star"
-                      onClick={() => setRating(star)}
-                      aria-label={`Rate ${star} out of 5`}
-                      style={{
-                        color: star <= rating ? "#F5A623" : "#D8C9DF",
-                      }}
-                    >
-                      ★
-                    </button>
-                  ))}
-                </div>
-
-                <p>
-                  {rating === 0
-                    ? "Select your rating"
-                    : `You rated ${rating} out of 5 stars`}
-                </p>
-              </div>
-              <button
-                type="button"
-                className="modal-add-cart-btn"
-                onClick={(e) => addToCart(selectedProduct, e)}
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

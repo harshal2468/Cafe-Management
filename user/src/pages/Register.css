@@ -689,3 +689,151 @@
     min-width: auto;
   }
 }
+
+/* POPUP CLOSE BUTTON */
+.popup-close-btn {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #777;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.popup-close-btn:hover {
+  color: #222;
+}
+
+/* ERROR POPUP */
+.register-error-popup {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 99999;
+  width: min(370px, calc(100% - 30px));
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 22px 35px 22px 20px;
+  background: #fff;
+  border: 1px solid #fecaca;
+  border-left: 5px solid #dc2626;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(50, 15, 35, 0.2);
+  animation: registerPopupIn 0.35s ease;
+}
+
+.error-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.error-content h3 {
+  margin: 2px 0 7px;
+  color: #b91c1c;
+  font-size: 16px;
+}
+
+.error-content p {
+  margin: 0 0 12px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.error-login-btn {
+  padding: 9px 15px;
+  border: none;
+  border-radius: 7px;
+  background: #6d28d9;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error-login-btn:hover {
+  background: #5521ad;
+}
+
+.register-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@keyframes registerPopupIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .register-error-popup {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* PASSWORD SHOW / HIDE */
+
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 44px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #806b84;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.password-toggle-btn:hover {
+  color: #6d28d9;
+  background: #f4ebfa;
+}
+
+.password-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

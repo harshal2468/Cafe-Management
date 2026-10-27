@@ -14,9 +14,11 @@ import Order from "./pages/Order";
 import OrderSuccess from "./pages/OrderSuccess";
 import MyOrders from "./pages/MyOrders";
 import ForgotPassword from "./pages/ForgotPassword";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />} />

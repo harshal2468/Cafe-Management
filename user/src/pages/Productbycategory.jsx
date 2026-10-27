@@ -13,10 +13,6 @@ function Productbycategory() {
   const [categoryName, setCategoryName] = useState("");
   const [message, setMessage] = useState("");
 
-  // View Details Modal
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [rating, setRating] = useState(0);
-
   // Fetch products by category
   const fetchProducts = async () => {
     try {
@@ -33,6 +29,7 @@ function Productbycategory() {
       }
     } catch (error) {
       console.log("Product Fetch Error:", error);
+      setProducts([]);
     }
   };
 
@@ -64,6 +61,7 @@ function Productbycategory() {
 
       const data = await response.json();
 
+      // Check login
       if (!response.ok || !data.loggedIn) {
         setMessage("Please login first to add products to cart.");
 
@@ -75,6 +73,7 @@ function Productbycategory() {
         return;
       }
 
+      // Separate cart for each user
       const userId = data.user.id;
       const cartKey = `cart_${userId}`;
 
@@ -87,49 +86,42 @@ function Productbycategory() {
       if (existingProduct) {
         updatedCart = cart.map((item) =>
           item._id === product._id
-            ? { ...item, quantity: (item.quantity || 1) + 1 }
+            ? {
+                ...item,
+                quantity: (item.quantity || 1) + 1,
+              }
             : item,
         );
       } else {
-        updatedCart = [...cart, { ...product, quantity: 1 }];
+        updatedCart = [
+          ...cart,
+          {
+            ...product,
+            quantity: 1,
+          },
+        ];
       }
 
       localStorage.setItem(cartKey, JSON.stringify(updatedCart));
 
+      // Update navbar cart count
       window.dispatchEvent(new Event("cartUpdated"));
 
       setMessage(`${product.pname} added to cart`);
 
-      setTimeout(() => setMessage(""), 2000);
-
-      setSelectedProduct(null);
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     } catch (error) {
       console.log("Add Cart Error:", error);
+
       setMessage("Unable to add product to cart.");
-      setTimeout(() => setMessage(""), 2000);
+
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     }
   };
-
-  // Open product details
-  const openDetails = (product) => {
-    setSelectedProduct(product);
-    setRating(0);
-  };
-
-  // Close modal with Escape key
-  useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        setSelectedProduct(null);
-      }
-    };
-
-    window.addEventListener("keydown", handleEscape);
-
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, []);
 
   // Load category products
   useEffect(() => {
@@ -143,16 +135,20 @@ function Productbycategory() {
     <>
       <Navbar />
 
+      {/* Cart Message */}
       {message && (
         <div className="cart-toast">
           <span>✓</span> {message}
         </div>
       )}
 
+      {/* Products Section */}
       <section className="products-section">
         <div className="section-heading">
           <span>OUR MENU</span>
+
           <h2>{categoryName || "Menu"}</h2>
+
           <p>Delicious items from this category.</p>
         </div>
 
@@ -160,6 +156,7 @@ function Productbycategory() {
           {products.length > 0 ? (
             products.map((product) => (
               <div className="product-card" key={product._id}>
+                {/* Product Image */}
                 <div className="product-image">
                   <img
                     src={`http://localhost:5000/uploads/${product.photo}`}
@@ -167,18 +164,26 @@ function Productbycategory() {
                   />
                 </div>
 
+                {/* Product Information */}
                 <div className="product-info">
                   <small>{categoryName}</small>
+
                   <h3>{product.pname}</h3>
+
                   <p>{product.description}</p>
 
-                  <button
-                    type="button"
-                    className="view-details-btn"
-                    onClick={() => openDetails(product)}
-                  >
-                    View Details
-                  </button>
+                  {/* Price and Add to Cart */}
+                  <div className="product-bottom">
+                    <strong>₹{product.rate}</strong>
+
+                    <button
+                      type="button"
+                      className="add-cart-btn"
+                      onClick={() => addToCart(product)}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </div>
             ))
@@ -187,91 +192,6 @@ function Productbycategory() {
           )}
         </div>
       </section>
-
-      {/* Product Details Modal */}
-      {selectedProduct && (
-        <div
-          className="product-modal-overlay"
-          onClick={() => setSelectedProduct(null)}
-        >
-          <div
-            className="product-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Product details"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="modal-close-btn"
-              onClick={() => setSelectedProduct(null)}
-              aria-label="Close details"
-            >
-              ×
-            </button>
-
-            <div className="modal-product-image">
-              <img
-                src={`http://localhost:5000/uploads/${selectedProduct.photo}`}
-                alt={selectedProduct.pname}
-              />
-            </div>
-
-            <div className="modal-product-info">
-              <span className="modal-category">{categoryName}</span>
-
-              <h2>{selectedProduct.pname}</h2>
-
-              <h3 className="modal-product-price">₹{selectedProduct.rate}</h3>
-
-              <p className="modal-product-description">
-                {selectedProduct.description || "No description available."}
-              </p>
-
-              <p className="modal-product-quantity">
-                <strong>Available Quantity:</strong>{" "}
-                {selectedProduct.quantity ?? "Not specified"}
-              </p>
-
-              {/* Star Rating */}
-              <div className="product-rating">
-                <h4>Rate This Product</h4>
-
-                <div className="rating-stars">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <button
-                      type="button"
-                      key={star}
-                      className="rating-star"
-                      onClick={() => setRating(star)}
-                      aria-label={`Rate ${star} out of 5`}
-                      style={{
-                        color: star <= rating ? "#F5A623" : "#D8C9DF",
-                      }}
-                    >
-                      ★
-                    </button>
-                  ))}
-                </div>
-
-                <p>
-                  {rating === 0
-                    ? "Select your rating"
-                    : `You rated ${rating} out of 5 stars`}
-                </p>
-              </div>
-
-              <button
-                type="button"
-                className="modal-add-cart-btn"
-                onClick={() => addToCart(selectedProduct)}
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </>

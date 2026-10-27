@@ -9,12 +9,36 @@ function Footer() {
         {/* Brand Section */}
         <div className="footer-section footer-brand">
           <Link to="/" className="footer-logo">
-            <div className="footer-cup">☕</div>
+            <div className="footer-cup">
+              <svg
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 17H28V24C28 29 24 32 19 32H17C12 32 8 29 8 24V17Z"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M28 19H31C35 19 35 26 29 27"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M13 12C10 9 15 8 13 5M20 12C17 9 22 8 20 5"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
 
-            <div>
-              <h2>
-                BREW<span>HUB</span>
-              </h2>
+            <div className="footer-logo-text">
+              <h2>BREWHUB</h2>
               <small>CAFE MANAGEMENT</small>
             </div>
           </Link>

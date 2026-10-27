@@ -46,7 +46,7 @@ function About() {
               coffee, delicious food and warm hospitality.
             </p>
 
-            <Link to="/products" className="explore-btn">
+            <Link to="/product" className="explore-btn">
               Explore Our Menu
               <span>→</span>
             </Link>
